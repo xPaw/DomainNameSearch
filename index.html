@@ -1,229 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Check all domain extensions</title>
-	<meta name="description" content="Search the list of all TLDs at once!" />
+	<title>Alan adı ara</title>
+	<meta name="description" content="Bütün uzantılarda alan adı araması yap" />
 	<meta name="referrer" content="no-referrer">
+	<script src="/cdn-cgi/apps/head/HmpOjbedb3GQPYuD5mXHGX5FP98.js"></script>
 	<style>
-	html {
-		box-sizing: border-box;
-		overflow-y: scroll;
-	}
+		html {
+			box-sizing: border-box;
+			overflow-y: scroll;
+		}
 
-	*,
-	*:before,
-	*:after {
-		box-sizing: inherit;
-	}
+		*,
+		*:before,
+		*:after {
+			box-sizing: inherit;
+		}
 
-	body {
-		background: #fff;
-		color: #111;
-		margin: 0;
-		font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-		font-size: 18px;
-		line-height: 1;
-	}
+		body {
+			background: #fff;
+			color: #111;
+			margin: 0;
+			font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+			font-size: 18px;
+			line-height: 1;
+		}
 
-	main {
-		max-width: 960px;
-		margin: 60px auto;
-		padding: 0 20px;
-	}
+		main {
+			max-width: 960px;
+			margin: 60px auto;
+			padding: 0 20px;
+		}
 
-	.input {
-		margin: 6px;
-		position: relative;
-		line-height: 40px;
-		margin-bottom: 40px;
-	}
+		.input {
+			margin: 6px;
+			position: relative;
+			line-height: 40px;
+			margin-bottom: 40px;
+		}
 
-	.input input,
-	.input button {
-		-webkit-appearance: none;
-		-moz-appearance: none;
-		appearance: none;
-		border: 0;
-		padding: 0;
-		background: transparent;
-		line-height: inherit;
-		font: inherit;
-	}
+		.input input,
+		.input button {
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			appearance: none;
+			border: 0;
+			padding: 0;
+			background: transparent;
+			line-height: inherit;
+			font: inherit;
+		}
 
-	.input input {
-		border: 1px solid #cfcfcf;
-		border-radius: 6px;
-		width: 100%;
-		padding-left: 10px;
-		padding-right: 90px;
-		outline: none;
-	}
+		.input input {
+			border: 1px solid #cfcfcf;
+			border-radius: 6px;
+			width: 100%;
+			padding-left: 10px;
+			padding-right: 90px;
+			outline: none;
+		}
 
-	.input input:focus {
-		border-color: hsl(207, 90%, 42%);
-		box-shadow: hsla(207, 90%, 42%, .1) 0 0 0 2px;
-	}
+		.input input:focus {
+			border-color: hsl(207, 90%, 42%);
+			box-shadow: hsla(207, 90%, 42%, .1) 0 0 0 2px;
+		}
 
-	.input button {
-		position: absolute;
-		right: 2px;
-		top: 2px;
-		line-height: 36px;
-		background: hsl(207, 90%, 42%);
-		border: 1px solid #fff;
-    	color: #fff;
-		border-radius: 4px;
-		padding: 0 15px;
-		outline: none;
-		cursor: pointer;
-	}
+		.input button {
+			position: absolute;
+			right: 2px;
+			top: 2px;
+			line-height: 36px;
+			background: hsl(207, 90%, 42%);
+			border: 1px solid #fff;
+			color: #fff;
+			border-radius: 4px;
+			padding: 0 15px;
+			outline: none;
+			cursor: pointer;
+		}
 
-	.input button:hover,
-	.input button:focus {
-		background: hsl(207, 90%, 60%);
-	}
+		.input button:hover,
+		.input button:focus {
+			background: hsl(207, 90%, 60%);
+		}
 
-	.input p {
-		margin: 0;
-		padding-top: 4px;
-		padding-left: 10px;
-		color: #333;
-		font-size: 12px;
-		line-height: 1.6;
-	}
+		.input p {
+			margin: 0;
+			padding-top: 4px;
+			padding-left: 10px;
+			color: #333;
+			font-size: 12px;
+			line-height: 1.6;
+		}
 
-	.input p a {
-		color: inherit;
-	}
+		.input p a {
+			color: inherit;
+		}
 
-	#domains {
-		display: flex;
-		flex-wrap: wrap;
-	}
+		#domains {
+			display: flex;
+			flex-wrap: wrap;
+		}
 
-	.domain {
-		flex: 1 0 auto;
-		padding: 10px;
-		margin: 6px;
-		border-radius: 3px;
-		text-decoration: none;
-		color: #737373;
-		background-color: #fff;
-		transition: color .3s, background-color .3s;
-	}
+		.domain {
+			flex: 1 0 auto;
+			padding: 10px;
+			margin: 6px;
+			border-radius: 3px;
+			text-decoration: none;
+			color: #737373;
+			background-color: #fff;
+			transition: color .3s, background-color .3s;
+		}
 
-	.domain:hover,
-	.domain:focus {
-		outline: none;
-		box-shadow: hsla(207, 90%, 42%, .1) 0 0 0 2px;
-	}
+		.domain:hover,
+		.domain:focus {
+			outline: none;
+			box-shadow: hsla(207, 90%, 42%, .1) 0 0 0 2px;
+		}
 
-	.domain-taken {
-		background-color: #ccc;
-		color: #000;
-	}
-	.domain-free {
-		background: hsl(122, 40%, 40%);
-   		color: #fff;
-	}
+		.domain-taken {
+			background-color: #C80000;
+			color: #000000;
+		}
+
+		.domain-free {
+			background: #3D8F40;
+			color: #ffffff;
+		}
 	</style>
 </head>
+
 <body>
 	<main>
 		<form class="input" id="js-form">
-			<input id="js-name" type="text" autocomplete="off" name="name" placeholder="Enter a name to check…" autofocus>
-			<button>Check</button>
-			<p>Queries <a href="https://developers.cloudflare.com/1.1.1.1/dns-over-https/">Cloudflare DNS over HTTPS</a> for valid <a href="https://en.wikipedia.org/wiki/SOA_record">SOA records</a> directly in your browser.</p>
-			<p id="js-iana-version">Domain list is fetched from <a href="https://data.iana.org/TLD/tlds-alpha-by-domain.txt">data.iana.org</a>. </p>
+			<input id="js-name" type="text" autocomplete="off" name="name" placeholder="Aramak istediğiniz alan adı"
+				autofocus>
+			<button>Ara</button>
+			<p>Sorgular <a href="https://developers.cloudflare.com/1.1.1.1/dns-over-https/">Cloudflare DNS over
+					HTTPS</a> üzerinden <a href="https://en.wikipedia.org/wiki/SOA_record">SOA records</a> ile direk
+				tarayıcınızdan yapılır.</p>
+			<p id="js-iana-version">Alan adı uzantı listesi <a
+					href="https://data.iana.org/TLD/tlds-alpha-by-domain.txt">data.iana.org</a> adresinden alınmıştır.
+			</p>
 		</form>
 		<div id="domains"></div>
 	</main>
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js" integrity="sha256-I5XOWZu6gbewMSB9UR88y0GmiJi9AsQcCzUpA/MBNnA=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/punycode/1.4.1/punycode.min.js"
+		integrity="sha256-I5XOWZu6gbewMSB9UR88y0GmiJi9AsQcCzUpA/MBNnA=" crossorigin="anonymous"></script>
 	<script>
-	(async () => {
-		let domains = [];
+		(async () => {
+			let domains = [];
 
-		document.getElementById( 'js-form' ).addEventListener( 'submit', async ( event ) =>
-		{
-			event.preventDefault();
+			document.getElementById('js-form').addEventListener('submit', async (event) => {
+				event.preventDefault();
 
-			document.querySelectorAll( '.domain' ).forEach( element =>
-			{
-				element.href = '#';
-				element.classList.remove( 'domain-taken', 'domain-free' );
-			} );
+				document.querySelectorAll('.domain').forEach(element => {
+					element.href = '#';
+					element.classList.remove('domain-taken', 'domain-free');
+				});
 
-			nameToCheck = document.getElementById( 'js-name' ).value.trim();
+				nameToCheck = document.getElementById('js-name').value.trim();
 
-			if( nameToCheck.length < 1 )
-			{
-				return;
+				if (nameToCheck.length < 1) {
+					return;
+				}
+
+				nameToCheck = punycode.toASCII(nameToCheck);
+
+				for (const domain of domains) {
+					fetch(`https://cloudflare-dns.com/dns-query?type=SOA&name=${nameToCheck}.${domain}.`,
+						{
+							headers:
+							{
+								Accept: 'application/dns-json'
+							}
+						})
+						.then(response => response.json())
+						.then(response => {
+							let hasSOA = false;
+
+							if (response.Answer) {
+								hasSOA = response.Answer.some(record => record.type === 6);
+							}
+
+							const element = document.getElementById(`tld-${domain}`);
+							element.classList.add(hasSOA ? 'domain-taken' : 'domain-free');
+
+							if (hasSOA) {
+								element.href = `http://${nameToCheck}.${domain}`;
+							}
+						})
+						.catch(error => console.log(domain, error));
+				}
+			});
+
+			domainsFetch = await fetch('https://data.iana.org/TLD/tlds-alpha-by-domain.txt');
+			domainsFetch = await domainsFetch.text();
+			domains = domainsFetch.trim().split('\n');
+			domainsFetch = null;
+
+			document.getElementById('js-iana-version').appendChild(document.createTextNode(domains.shift().substring(2) + '.'));
+
+			domains.sort((a, b) => {
+				if (a.length === b.length) {
+					return 0;
+				}
+
+				return a.length - b.length;
+			});
+
+			let allDomains = '';
+
+			for (const domain of domains) {
+				let displayName = domain.toLowerCase();
+				displayName = displayName.startsWith('xn--') ? punycode.toUnicode(displayName.toLowerCase()) : displayName;
+
+				allDomains += `<a href="#" target="_blank" rel="noopener" class="domain" id="tld-${domain}">.${displayName}</a> `;
 			}
 
-			nameToCheck = punycode.toASCII( nameToCheck );
-
-			for( const domain of domains )
-			{
-				fetch( `https://cloudflare-dns.com/dns-query?type=SOA&name=${nameToCheck}.${domain}.`,
-				{
-					headers:
-					{
-						Accept: 'application/dns-json'
-					}
-				} )
-				.then( response => response.json() )
-				.then( response => {
-					let hasSOA = false;
-
-					if( response.Answer )
-					{
-						hasSOA = response.Answer.some( record => record.type === 6 );
-					}
-
-					const element = document.getElementById( `tld-${domain}` );
-					element.classList.add( hasSOA ? 'domain-taken' : 'domain-free' );
-
-					if( hasSOA )
-					{
-						element.href = `http://${nameToCheck}.${domain}`; 
-					}
-				} )
-				.catch( error => console.log( domain, error ) );
-			}
-		} );
-
-		domainsFetch = await fetch( 'https://data.iana.org/TLD/tlds-alpha-by-domain.txt' );
-		domainsFetch = await domainsFetch.text();
-		domains = domainsFetch.trim().split( '\n' );
-		domainsFetch = null;
-
-		document.getElementById( 'js-iana-version' ).appendChild( document.createTextNode( domains.shift().substring( 2 ) + '.' ) );
-
-		domains.sort( ( a, b ) =>
-		{
-			if( a.length === b.length )
-			{
-				return 0;
-			}
-
-			return a.length - b.length;
-		} );
-
-		let allDomains = '';
-
-		for( const domain of domains )
-		{
-			let displayName = domain.toLowerCase();
-			displayName = displayName.startsWith( 'xn--' ) ? punycode.toUnicode( displayName.toLowerCase() ) : displayName;
-
-			allDomains += `<a href="#" target="_blank" rel="noopener" class="domain" id="tld-${domain}">.${displayName}</a> `;
-		}
-
-		document.getElementById( 'domains' ).innerHTML = allDomains;
-	})();
+			document.getElementById('domains').innerHTML = allDomains;
+		})();
 	</script>
 </body>
+
 </html>
