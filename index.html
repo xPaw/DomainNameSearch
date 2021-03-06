@@ -165,7 +165,19 @@
 
 			nameToCheck = punycode.toASCII( nameToCheck );
 
-			for( const domain of domains )
+			const queue = [ ...domains ];
+
+			const queueNext = () =>
+			{
+				const nextDomain = queue.shift();
+
+				if( nextDomain )
+				{
+					fetchDomain( nextDomain );
+				}
+			};
+
+			const fetchDomain = ( domain ) =>
 			{
 				fetch( `https://cloudflare-dns.com/dns-query?type=SOA&name=${nameToCheck}.${domain}.`,
 				{
@@ -175,7 +187,8 @@
 					}
 				} )
 				.then( response => response.json() )
-				.then( response => {
+				.then( response =>
+				{
 					let hasSOA = false;
 
 					if( response.Answer )
@@ -190,8 +203,19 @@
 					{
 						element.href = `http://${nameToCheck}.${domain}`; 
 					}
+
+					queueNext();
 				} )
-				.catch( error => console.log( domain, error ) );
+				.catch( error =>
+				{
+					queueNext();
+					console.log( domain, error );
+				} );
+			};
+
+			for( let i = 0; i < 10; i++ )
+			{
+				queueNext();
 			}
 		} );
 
