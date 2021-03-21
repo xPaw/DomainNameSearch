@@ -98,6 +98,10 @@
 		color: inherit;
 	}
 
+	.input p a:hover {
+		color: #06f;
+	}
+
 	#domains {
 		display: flex;
 		flex-wrap: wrap;
@@ -118,15 +122,62 @@
 	.domain:focus {
 		outline: none;
 		box-shadow: hsla(207, 90%, 42%, .1) 0 0 0 2px;
+		background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
 	}
 
 	.domain-taken {
 		background-color: #ccc;
 		color: #000;
 	}
+
 	.domain-free {
 		background: hsl(122, 40%, 40%);
    		color: #fff;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		body {
+			background: #2d2d2d;
+			color: #e7e8eb;
+		}
+
+		.input p {
+			color: #e7e8eb;
+		}
+
+		.input input {
+			border-color: #697075;
+			color: #fff;
+		}
+
+		.input input:focus {
+			border-color: hsl(207, 90%, 42%);
+			box-shadow: hsla(207, 90%, 42%, .3) 0 0 0 2px;
+		}
+
+		.input button {
+			border-color: #2d2d2d;
+		}
+
+		.domain {
+			color: #737373;
+			background-color: #2d2d2d;
+		}
+
+		.domain:hover,
+		.domain:focus {
+			box-shadow: hsla(207, 90%, 42%, .5) 0 0 0 2px;
+		}
+
+		.domain-taken {
+			background-color: #111;
+			color: #fff;
+		}
+
+		.domain-free {
+			background: hsl(122, 40%, 40%);
+			color: #fff;
+		}
 	}
 	</style>
 </head>
@@ -201,7 +252,7 @@
 
 					if( hasSOA )
 					{
-						element.href = `http://${nameToCheck}.${domain}`; 
+						element.href = `http://${nameToCheck}.${domain}`;
 					}
 
 					queueNext();
